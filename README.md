@@ -2,16 +2,15 @@
 
 A simple REST API built with **Rust** and the **Axum** framework that supports full CRUD (Create, Read, Update, Delete) operations on a list of users. Data is stored in memory — no database required.
 
----
+
 
 ## Prerequisites
 
 Before running this project, make sure you have the following installed:
 
-| Tool | Purpose | Install |
-|------|---------|---------|
-| Rust | Programming language | [rustup.rs](https://rustup.rs) |
-| Git | Version control | [git-scm.com](https://git-scm.com) |
+
+ Rust  [rustup.rs](https://rustup.rs) |
+ Git  Version control [git-scm.com](https://git-scm.com) |
 
 Verify your installations by running:
 
@@ -22,7 +21,7 @@ cargo --version
 
 You should see version numbers printed for both. If not, restart your terminal after installing.
 
----
+
 
 ## Setup Instructions
 
@@ -46,7 +45,7 @@ cargo run
 You should see this message in your terminal:
 
 ```
-✅ Server is running at http://localhost:3000
+Success!! Server is running at http://localhost:3000
    Available endpoints:
    GET    /users
    GET    /users/:id
@@ -57,7 +56,7 @@ You should see this message in your terminal:
 
 The server is now ready to accept requests on `http://localhost:3000`.
 
----
+
 
 ## API Endpoints
 
@@ -69,7 +68,6 @@ The server is now ready to accept requests on `http://localhost:3000`.
 | `PUT` | `/users/:id` | Update an existing user | `{ "name": "...", "email": "..." }` |
 | `DELETE` | `/users/:id` | Delete a user | None |
 
----
 
 ## Testing the Endpoints
 
@@ -92,9 +90,8 @@ curl -X POST http://localhost:3000/users \
 }
 ```
 
-> **Important:** Copy the `id` value from the response — you will need it for the next steps.
+> **Important:** Copy the `id` value from the response
 
----
 
 ### 2. Get all users
 
@@ -113,8 +110,6 @@ curl http://localhost:3000/users
 ]
 ```
 
----
-
 ### 3. Get a user by ID
 
 Replace `YOUR-ID-HERE` with the `id` copied from Step 1.
@@ -132,7 +127,7 @@ curl http://localhost:3000/users/YOUR-ID-HERE
 }
 ```
 
----
+
 
 ### 4. Update a user
 
@@ -153,8 +148,6 @@ curl -X PUT http://localhost:3000/users/YOUR-ID-HERE \
 }
 ```
 
----
-
 ### 5. Delete a user
 
 Replace `YOUR-ID-HERE` with the same `id`.
@@ -170,7 +163,6 @@ User 'YOUR-ID-HERE' deleted successfully
 
 Run `GET /users` again to confirm the list is now empty.
 
----
 
 ## Project Structure
 
@@ -183,7 +175,6 @@ users-api/
     └── main.rs      # All API logic — routes, handlers, data structures
 ```
 
----
 
 ## Dependencies
 
@@ -199,6 +190,6 @@ users-api/
 
 ## Notes
 
-- Data is stored **in memory only**. All users are lost when the server is restarted. A database would be added in future weeks.
+- Data is stored **in memory only**. All users are lost when the server is restarted.
 - The server runs on **port 3000** by default.
 - User IDs are generated automatically using UUID v4 — you do not provide them when creating a user.
